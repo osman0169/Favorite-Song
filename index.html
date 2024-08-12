@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oy Asiye - My Favorite Song</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .video-container {
+            margin: 20px auto;
+        }
+
+        #animated-div {
+            width: 100px;
+            height: 100px;
+            background-color: #ff6347;
+            margin: 20px auto;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <h1>Oy Asiye - My Favorite Song</h1>
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/GHzJ4bVuFS4" 
+        title="Oy Asiye" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div id="animated-div"></div>
+    <script>
+        let animatedDiv = document.getElementById("animated-div");
+
+        function animateDiv() {
+            let pos = 0;
+            let id = setInterval(frame, 10);
+
+            function frame() {
+                if (pos == 350) {
+                    clearInterval(id);
+                } else {
+                    pos++;
+                    animatedDiv.style.top = pos + "px";
+                    animatedDiv.style.left = pos + "px";
+                }
+            }
+        }
+
+        animateDiv();
+    </script>
+</body>
+</html>
